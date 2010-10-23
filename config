@@ -62,7 +62,6 @@ chatnets = {
   SILC = { type = "SILC"; };
   Freenode = {
     type = "IRC";
-    autosendcmd = "/msg NickServ identify dzyg4I79x6PPzI3gcXLq; wait -Freenode 2000";
     max_kicks = "1";
     max_msgs = "3";
     max_whois = "30";
