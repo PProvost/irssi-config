@@ -1,6 +1,11 @@
 servers = (
   { address = "irc.stealth.net"; chatnet = "IRCnet"; port = "6668"; },
-  { address = "irc.efnet.org"; chatnet = "EFNet"; port = "6667"; },
+  {
+    address = "irc.efnet.org";
+    chatnet = "EFNet";
+    port = "6667";
+    autoconnect = "yes";
+  },
   { 
     address = "irc.undernet.org";
     chatnet = "Undernet";
@@ -29,8 +34,12 @@ chatnets = {
     max_whois = "4";
     max_query_chans = "5";
   };
-  EFNet = { 
+  EFNet = {
     type = "IRC";
+    nick = "Quaiche";
+    username = "Quaiche";
+    realname = "Quaiche";
+    usermode = "+i";
     max_kicks = "4";
     max_msgs = "3";
     max_whois = "1";
@@ -62,6 +71,10 @@ chatnets = {
   SILC = { type = "SILC"; };
   Freenode = {
     type = "IRC";
+    nick = "PProvost";
+    username = "PProvost";
+    realname = "PProvost";
+    usermode = "+i";
     max_kicks = "1";
     max_msgs = "3";
     max_whois = "30";
@@ -69,12 +82,25 @@ chatnets = {
 };
 
 channels = (
-  { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
-  { name = "silc"; chatnet = "silc"; autojoin = "No"; },
   { name = "#benethugs"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#dongle"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#wowace"; chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "#wowuidev"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#wowuidev"; chatnet = "Freenode"; autojoin = "yes"; },
+  { 
+    name = "#alt.binaries.teevee";
+    chatnet = "EFNet";
+    autojoin = "yes";
+  },
+  { 
+    name = "#alt.binaries.moovee";
+    chatnet = "EFNet";
+    autojoin = "yes";
+  },
+  {
+    name = "#alt.binaries.hdtv.x264";
+    chatnet = "EFNet";
+    autojoin = "yes";
+  }
 );
 
 aliases = {
@@ -124,6 +150,8 @@ aliases = {
   EXEMPTLIST = "mode $C +e";
   ATAG = "WINDOW SERVER";
   wave = "me waves. Hi there!";
+  ns = "/msg NickServ";
+  cs = "msg chanserv";
 };
 
 statusbar = {
@@ -251,12 +279,21 @@ settings = {
     user_name = "PProvost";
     nick = "PProvost";
   };
-  "fe-text" = { actlist_sort = "refnum"; autostick_split_windows = "no"; };
+  "fe-text" = { 
+    actlist_sort = "refnum";
+    autostick_split_windows = "yes";
+  };
   "irc/core" = { alternate_nick = "PProvost_"; };
 };
 windows = {
-  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
-  2 = {
+  1 = { 
+    immortal = "yes";
+    name = "(status)";
+    level = "ALL";
+    sticky = "yes";
+  };
+  2 = { name = "hilight"; sticky = "yes"; };
+  3 = {
     items = (
       {
         type = "CHANNEL";
@@ -265,8 +302,10 @@ windows = {
         tag = "Freenode";
       }
     );
+    sticky = "yes";
+    parent = "1";
   };
-  3 = {
+  4 = {
     items = (
       {
         type = "CHANNEL";
@@ -275,8 +314,10 @@ windows = {
         tag = "Freenode";
       }
     );
+    sticky = "yes";
+    parent = "1";
   };
-  4 = {
+  5 = {
     items = (
       {
         type = "CHANNEL";
@@ -285,8 +326,10 @@ windows = {
         tag = "Freenode";
       }
     );
+    sticky = "yes";
+    parent = "1";
   };
-  5 = {
+  6 = {
     items = (
       {
         type = "CHANNEL";
@@ -295,10 +338,48 @@ windows = {
         tag = "Freenode";
       }
     );
+    sticky = "yes";
+    parent = "1";
   };
-  6 = { name = "hilight"; };
+  7 = {
+    name = "#a.b.teevee";
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#alt.binaries.hdtv.x264";
+        tag = "EFNet";
+      }
+    );
+    sticky = "yes";
+    parent = "1";
+  };
+  8 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#alt.binaries.moovee";
+        tag = "EFNet";
+      }
+    );
+    sticky = "yes";
+    parent = "1";
+  };
+  9 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#alt.binaries.teevee";
+        tag = "EFNet";
+      }
+    );
+    sticky = "yes";
+    parent = "1";
+  };
 };
 mainwindows = {
-  1 = { first_line = "8"; lines = "30"; };
-  6 = { first_line = "1"; lines = "7"; };
+  1 = { first_line = "8"; lines = "44"; };
+  2 = { first_line = "1"; lines = "7"; };
 };
