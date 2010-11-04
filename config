@@ -213,7 +213,6 @@ statusbar = {
         window = { };
         window_empty = { };
         lag = { priority = "-1"; };
-        act = { priority = "10"; };
         more = { priority = "-1"; alignment = "right"; };
         barend = { priority = "100"; alignment = "right"; };
         usercount = { };
@@ -284,13 +283,16 @@ settings = {
     autostick_split_windows = "yes";
   };
   "irc/core" = { alternate_nick = "PProvost_"; };
+  "perl/core/scripts" = { awl_prefer_name = "yes"; };
 };
+hilights = ( { text = "Quaiche"; nick = "yes"; word = "yes"; } );
 windows = {
-  1 = { 
+  1 = {
     immortal = "yes";
     name = "(status)";
     level = "ALL";
     sticky = "yes";
+    parent = "3";
   };
   2 = { name = "hilight"; sticky = "yes"; };
   3 = {
@@ -303,7 +305,6 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "1";
   };
   4 = {
     items = (
@@ -315,7 +316,7 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "1";
+    parent = "3";
   };
   5 = {
     items = (
@@ -327,7 +328,7 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "1";
+    parent = "3";
   };
   6 = {
     items = (
@@ -339,10 +340,10 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "1";
+    parent = "3";
   };
   7 = {
-    name = "#a.b.teevee";
+    name = "#a.b.hdtv.x264";
     items = (
       {
         type = "CHANNEL";
@@ -352,9 +353,10 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "1";
+    parent = "3";
   };
   8 = {
+    name = "#a.b.moovee";
     items = (
       {
         type = "CHANNEL";
@@ -364,9 +366,10 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "1";
+    parent = "3";
   };
   9 = {
+    name = "#a.b.teevee";
     items = (
       {
         type = "CHANNEL";
@@ -376,10 +379,10 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "1";
+    parent = "3";
   };
 };
 mainwindows = {
-  1 = { first_line = "8"; lines = "44"; };
+  3 = { first_line = "8"; lines = "44"; };
   2 = { first_line = "1"; lines = "7"; };
 };
