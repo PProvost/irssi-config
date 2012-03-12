@@ -1,39 +1,27 @@
 servers = (
-  { address = "irc.stealth.net"; chatnet = "IRCnet"; port = "6668"; },
   {
     address = "irc.efnet.org";
     chatnet = "EFNet";
     port = "6667";
     autoconnect = "yes";
   },
-  { 
-    address = "irc.undernet.org";
-    chatnet = "Undernet";
-    port = "6667";
-  },
-  { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
-  { 
-    address = "irc.quakenet.org";
-    chatnet = "QuakeNet";
-    port = "6667";
-  },
-  { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
   {
     address = "irc.freenode.net";
     port = "6667";
     chatnet = "Freenode";
     autoconnect = "yes";
+  },
+  {
+    address = "irc.stratics.com";
+    chatnet = "Stratics";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "yes";
   }
 );
 
 chatnets = {
-  IRCnet = {
-    type = "IRC";
-    max_kicks = "4";
-    max_msgs = "5";
-    max_whois = "4";
-    max_query_chans = "5";
-  };
   EFNet = {
     type = "IRC";
     nick = "Quaiche";
@@ -44,31 +32,6 @@ chatnets = {
     max_msgs = "3";
     max_whois = "1";
   };
-  Freenet = {
-    type = "IRC";
-    max_kicks = "4";
-    max_msgs = "3";
-    max_whois = "1";
-  };
-  Undernet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  DALnet = {
-    type = "IRC";
-    max_kicks = "4";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  QuakeNet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  SILC = { type = "SILC"; };
   Freenode = {
     type = "IRC";
     nick = "PProvost";
@@ -79,6 +42,10 @@ chatnets = {
     max_msgs = "3";
     max_whois = "30";
   };
+  Stratics = { 
+		type = "IRC"; 
+		nick = "PProvost"; 
+	};
 };
 
 channels = (
@@ -86,21 +53,14 @@ channels = (
   { name = "#dongle"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#wowace"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#wowuidev"; chatnet = "Freenode"; autojoin = "yes"; },
-  { 
-    name = "#alt.binaries.teevee";
-    chatnet = "EFNet";
-    autojoin = "yes";
-  },
-  { 
-    name = "#alt.binaries.moovee";
-    chatnet = "EFNet";
-    autojoin = "yes";
-  },
-  {
-    name = "#alt.binaries.hdtv.x264";
-    chatnet = "EFNet";
-    autojoin = "yes";
-  }
+  { name = "#sickbeard"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#curseforge"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#xbmc"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#powershell"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#alt.binaries.teevee"; chatnet = "EFNet"; autojoin = "yes"; },
+  { name = "#alt.binaries.moovee"; chatnet = "EFNet"; autojoin = "yes"; },
+  { name = "#alt.binaries.hdtv.x264"; chatnet = "EFNet"; autojoin = "yes"; },
+  { name = "#rawr"; chatnet = "Stratics"; autojoin = "yes"; },
 );
 
 aliases = {
@@ -119,7 +79,7 @@ aliases = {
   WI = "whois";
   WII = "whois $0 $0";
   WW = "whowas";
-  W = "who";
+  W = "msg";
   N = "names";
   M = "msg";
   T = "topic";
@@ -152,6 +112,10 @@ aliases = {
   wave = "me waves. Hi there!";
   ns = "/msg NickServ";
   cs = "msg chanserv";
+  crickets = "me hears crickets. Chirp! Chirp!";
+  whaleslap = "me smacks $0 with a small blue whale";
+  shrug = "me shrugs. Whatcha gonna do?";
+  salute = "me salutes $0";
 };
 
 statusbar = {
@@ -270,6 +234,13 @@ statusbar = {
         barend = { priority = "100"; alignment = "right"; };
       };
     };
+    awl_1 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_1 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
   };
 };
 settings = {
@@ -285,7 +256,11 @@ settings = {
   "irc/core" = { alternate_nick = "PProvost_"; };
   "perl/core/scripts" = { awl_prefer_name = "yes"; };
 };
-hilights = ( { text = "Quaiche"; nick = "yes"; word = "yes"; } );
+hilights = (
+  { text = "Quaiche"; nick = "yes"; word = "yes"; },
+  { text = "@PProvost"; nick = "yes"; word = "yes"; },
+  { text = "Peter"; nick = "yes"; word = "yes"; }
+);
 windows = {
   1 = {
     immortal = "yes";
