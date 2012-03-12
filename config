@@ -42,10 +42,7 @@ chatnets = {
     max_msgs = "3";
     max_whois = "30";
   };
-  Stratics = { 
-		type = "IRC"; 
-		nick = "PProvost"; 
-	};
+  Stratics = { type = "IRC"; nick = "PProvost"; };
 };
 
 channels = (
@@ -56,11 +53,23 @@ channels = (
   { name = "#sickbeard"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#curseforge"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#xbmc"; chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "#powershell"; chatnet = "Freenode"; autojoin = "yes"; }
-  { name = "#alt.binaries.teevee"; chatnet = "EFNet"; autojoin = "yes"; },
-  { name = "#alt.binaries.moovee"; chatnet = "EFNet"; autojoin = "yes"; },
-  { name = "#alt.binaries.hdtv.x264"; chatnet = "EFNet"; autojoin = "yes"; },
-  { name = "#rawr"; chatnet = "Stratics"; autojoin = "yes"; },
+  { name = "#powershell"; chatnet = "Freenode"; autojoin = "yes"; },
+  { 
+    name = "#alt.binaries.teevee";
+    chatnet = "EFNet";
+    autojoin = "yes";
+  },
+  { 
+    name = "#alt.binaries.moovee";
+    chatnet = "EFNet";
+    autojoin = "yes";
+  },
+  {
+    name = "#alt.binaries.hdtv.x264";
+    chatnet = "EFNet";
+    autojoin = "yes";
+  },
+  { name = "#rawr"; chatnet = "Stratics"; autojoin = "yes"; }
 );
 
 aliases = {
