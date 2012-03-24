@@ -125,6 +125,7 @@ aliases = {
   whaleslap = "me smacks $0 with a small blue whale";
   shrug = "me shrugs. Whatcha gonna do?";
   salute = "me salutes $0";
+  botmail = "msg memoserv";
 };
 
 statusbar = {
@@ -271,12 +272,11 @@ hilights = (
   { text = "Peter"; nick = "yes"; word = "yes"; }
 );
 windows = {
-  1 = {
+  1 = { 
     immortal = "yes";
     name = "(status)";
     level = "ALL";
     sticky = "yes";
-    parent = "3";
   };
   2 = { name = "hilight"; sticky = "yes"; };
   3 = {
@@ -289,6 +289,7 @@ windows = {
       }
     );
     sticky = "yes";
+    parent = "1";
   };
   4 = {
     items = (
@@ -300,7 +301,7 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "3";
+    parent = "1";
   };
   5 = {
     items = (
@@ -312,7 +313,7 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "3";
+    parent = "1";
   };
   6 = {
     items = (
@@ -324,7 +325,7 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "3";
+    parent = "1";
   };
   7 = {
     name = "#a.b.hdtv.x264";
@@ -337,7 +338,7 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "3";
+    parent = "1";
   };
   8 = {
     name = "#a.b.moovee";
@@ -350,7 +351,7 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "3";
+    parent = "1";
   };
   9 = {
     name = "#a.b.teevee";
@@ -363,10 +364,80 @@ windows = {
       }
     );
     sticky = "yes";
-    parent = "3";
+    parent = "1";
+  };
+  10 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#sickbeard";
+        tag = "Freenode";
+      }
+    );
+  };
+  11 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#curseforge";
+        tag = "Freenode";
+      }
+    );
+  };
+  12 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#xbmc";
+        tag = "Freenode";
+      }
+    );
+  };
+  13 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#powershell";
+        tag = "Freenode";
+      }
+    );
+  };
+  14 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "chanserv";
+        tag = "Freenode";
+      }
+    );
+  };
+  15 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "memoserv";
+        tag = "Freenode";
+      }
+    );
+  };
+  16 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "NickServ";
+        tag = "Freenode";
+      }
+    );
   };
 };
 mainwindows = {
-  3 = { first_line = "8"; lines = "44"; };
-  2 = { first_line = "1"; lines = "7"; };
+  1 = { first_line = "6"; lines = "45"; };
+  2 = { first_line = "1"; lines = "5"; };
 };
